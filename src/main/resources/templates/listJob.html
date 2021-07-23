@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Job</title>
+    <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <h2>List Job</h2>
+    <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            
+            <th scope="col">Name</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr th:each="job,iter:${jobs}">
+                <td th:text="${job.id}"></td>
+                <td th:text="${job.name}"></td>
+          </tr>
+        </tbody>
+      </table>
+  </body>
+</html>

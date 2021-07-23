@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>List Person</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>LIST PERSON</h2>
+		<p>
+			<a class="btn btn-primary" th:href="@{/addPerson}">ADD PERSON</a>
+		</p>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Photo</th>
+					<th>ID </th>
+					<th>Name</th>
+					<th>Job </th>
+					<th>Gender </th>
+					<th>Birth Day</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+				<tr th:each = "person:${people}">
+					<td width="100" th:text= "${person.photo}"></td>
+					<td th:text = "${person.id}"></td>
+					<td th:text = "${person.name}"></td>
+					<td th:text = "${person.job}"></td>
+					<td><span th:text = "${person.gender}? 'Male' : 'Female'"></span></td>
+					<td th:text = "${person.birthDay}"></td>
+					
+					<a class="btn btn-primary btn-sm"href="#">Edit</a> | 
+					<a class="btn btn-danger btn-sm" href="">Delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
